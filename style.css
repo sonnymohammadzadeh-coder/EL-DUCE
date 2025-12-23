@@ -33,6 +33,13 @@ body::before {
   z-index: -1;
 }
 
+.topnav,
+.main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
 /* Top Navigation */
 .topnav {
   display: flex;
