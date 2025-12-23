@@ -144,3 +144,20 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+/* Quote under search bar */
+.quote {
+  text-align: center;
+  margin: 15px 0 40px 0;
+  font-family: 'Cinzel', serif; /* stylish, classic serif font */
+  font-size: 20px;
+  color: #d4af37; /* gold accent */
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Optional: if you want a true Godfather look, you can use this font via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap');
+
+.quote p {
+  font-family: 'UnifrakturCook', cursive; /* Godfather-style font */
+}
