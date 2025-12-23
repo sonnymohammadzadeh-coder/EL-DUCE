@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin the Wheel - EL DUCE</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Wheel Container */
+    .wheel-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 60px 0;
+    }
+
+    /* Wheel */
+    #wheel {
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      border: 10px solid #d4af37; /* gold accent */
+      position: relative;
+      overflow: hidden;
+      transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+      box-shadow: 0 0 25px rgba(212,175,55,0.7);
+    }
+
+    /* Segments */
+    .segment {
+      position: absolute;
+      width: 50%;
+      height: 50%;
+      background-color: #111;
+      color: #f5f5f5;
+      text-align: right;
+      padding: 10px;
+      transform-origin: 100% 100%;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    /* Spin Button */
+    #spinBtn {
+      margin-top: 30px;
+      padding: 15px 35px;
+      background-color: #d4af37;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #spinBtn:hover {
+      background-color: #b8942d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wheel-container">
+    <h2 class="section-title">Spin the Wheel for a Prize!</h2>
+    <div id="wheel">
+      <div class="segment" style="transform: rotate(0deg); background:#1a1a1a;">10% OFF</div>
+      <div class="segment" style="transform: rotate(72deg); background:#222;">30% OFF</div>
+      <div class="segment" style="transform: rotate(144deg); background:#1a1a1a;">50% OFF</div>
+      <div class="segment" style="transform: rotate(216deg); background:#222;">Buy 1 Get 1 Free</div>
+      <div class="segment" style="transform: rotate(288deg); background:#1a1a1a;">2 for 1</div>
+    </div>
+    <button id="spinBtn">SPIN THE WHEEL</button>
+  </div>
+
+  <script>
+    const wheel = document.getElementById('wheel');
+    const button = document.getElementById('spinBtn');
+    let spinning = false;
+
+    button.addEventListener('click', () => {
+      if (spinning) return;
+      spinning = true;
+
+      // Random rotation between 3 and 6 spins + extra degrees
+      const spins = Math.floor(Math.random() * 360) + 1080; 
+      wheel.style.transform = `rotate(${spins}deg)`;
+
+      // After animation ends
+      setTimeout(() => {
+        // Determine prize index
+        const finalDeg = spins % 360;
+        const segmentSize = 360 / 5; // 5 prizes
+        const prizeIndex = Math.floor((360 - finalDeg) / segmentSize) % 5;
+
+        const prizes = [
+          "10% OFF",
+          "30% OFF",
+          "50% OFF",
+          "Buy 1 Get 1 Free",
+          "2 for 1"
+        ];
+
+        alert(`Congratulations! You won: ${prizes[prizeIndex]}`);
+        spinning = false;
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>
