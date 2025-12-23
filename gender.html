@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop By Gender - EL DUCE</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Same CSS as homepage -->
+</head>
+<body>
+
+  <!-- Top Nav -->
+  <div class="topnav" id="topnav">
+    <div class="hamburger" onclick="toggleDropdown()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search EL DUCE">
+    </div>
+    <div class="deals">Deals & Offerings</div>
+  </div>
+
+  <!-- Dropdown Menu -->
+  <div class="dropdown" id="dropdownMenu">
+    <a href="#">EL DUCE ITALIANO</a>
+    <a href="#">EL DUCE JAPAN</a>
+    <a href="#">EL DUCE BRAZIL</a>
+  </div>
+
+  <!-- For Her / For Him Section -->
+  <div class="main">
+    <h2 class="section-title">Shop By Gender</h2>
+    <div class="products">
+      <div class="product-card" onclick="window.location.href='women.html'">
+        <img src="https://via.placeholder.com/220x220" alt="For Her">
+        <h3>For Her</h3>
+        <p>Luxury fashion for women</p>
+      </div>
+      <div class="product-card" onclick="window.location.href='men.html'">
+        <img src="https://via.placeholder.com/220x220" alt="For Him">
+        <h3>For Him</h3>
+        <p>Premium streetwear for men</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Follow us on:</p>
+    <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
+    <p>© 2025 EL DUCE. All Rights Reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script> <!-- Same JS as homepage -->
+</body>
+</html>
